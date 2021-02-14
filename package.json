@@ -1,0 +1,27 @@
+{
+  "name": "node-api",
+  "main": "server.js",
+  "dependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "body-parser": "latest",
+    "dotenv": "^8.2.0",
+    "express": "latest",
+    "mongoose": "latest",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "scripts": {
+    "server": "node ./dist/server.js",
+    "transpile": "babel ./src --out-dir dist",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run transpile",
+    "start": "npm run --silent build && npm run server"
+  }
+}
